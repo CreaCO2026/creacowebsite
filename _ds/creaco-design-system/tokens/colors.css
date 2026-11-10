@@ -1,0 +1,12 @@
+:root{
+--green-50:#F1F7F2;--green-100:#E8F2E9;--green-200:#D6E8D8;--green-300:#9CCBA2;--green-500:#67AF71;--green-600:#529A5D;--green-700:#3F804A;--green-800:#2C5A34;--green-900:#1D3D23;
+--pink-100:#F8E3EC;--pink-300:#EBA9C4;--pink-500:#D9729A;--pink-700:#A84873;
+--ink-900:#18171C;--ink-700:#3A393F;--ink-500:#6B6A70;--ink-300:#A9A8AC;--ink-200:#D6D5D8;--ink-100:#ECEBED;
+--paper:#FFFFFF;--paper-warm:#F4F1EA;--paper-warm-2:#E9E4D8;
+--signal-warning:#C98A1B;--signal-danger:#C2412D;--signal-success:#3F804A;
+--brand-primary:var(--green-500);--brand-accent:var(--pink-500);
+--text-body:var(--ink-900);--text-muted:var(--ink-500);--text-heading:var(--ink-900);--text-heading-brand:var(--green-700);--text-on-brand:#FFFFFF;--text-on-accent:#FFFFFF;--text-link:var(--green-700);--text-link-hover:var(--green-900);
+--surface-page:var(--paper);--surface-alt:var(--paper-warm);--surface-card:var(--paper);--surface-brand:var(--green-500);--surface-accent:var(--pink-500);--surface-ink:var(--ink-900);
+--border-default:var(--ink-200);--border-strong:var(--ink-900);--border-brand:var(--green-500);
+--focus-ring:0 0 0 3px var(--green-300);
+}

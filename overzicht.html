@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="omelette-owns-print" content="true">
+<title>CreaCo website – overzicht</title>
+<link rel="stylesheet" href="_ds/creaco-design-system/tokens/fonts.css">
+<style id="pagesize"></style>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:#18171C;font-family:Arial,Arimo,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+#sheet{padding:80px;display:flex;flex-direction:column;gap:56px;width:max-content}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.head h1{font-family:Impact,'Impact',sans-serif;font-weight:400;color:#67AF71;font-size:96px;line-height:.9;margin:0}
+.head p{margin:0;font-size:18px;color:#595959}
+.grid{display:grid;grid-template-columns:repeat(3,max-content);gap:56px 48px;align-items:start}
+.item{display:flex;flex-direction:column;gap:14px}
+.lbl{font-weight:700;font-size:16px;letter-spacing:.08em;text-transform:uppercase;display:flex;gap:10px;align-items:baseline}
+.lbl b{font-family:Impact,sans-serif;font-weight:400;font-size:28px;color:#67AF71;letter-spacing:0}
+.frame{border:2px solid #18171C;overflow:hidden;position:relative;background:#fff}
+.frame iframe{border:0;width:1440px;position:absolute;top:0;left:0;transform-origin:0 0;pointer-events:none}
+@media print{#sheet{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div id="sheet">
+  <div class="head">
+    <h1>Website overzicht</h1>
+    <p>Crealisatie Coöperatie – alle pagina's</p>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+<script>
+const S=0.42, W=1440;
+const pages=[['home','Home'],['aanpak','Aanpak'],['inzicht','Sleutelinzicht'],['samenwerken','Samenwerken'],['projecten','Projecten'],['organisatie','Organisatie']];
+const grid=document.getElementById('grid');
+let done=0;
+pages.forEach(([id,name],i)=>{
+  const item=document.createElement('div');item.className='item';
+  item.innerHTML=`<div class="lbl"><b>${String(i+1).padStart(2,'0')}</b>${name}</div>`;
+  const fr=document.createElement('div');fr.className='frame';fr.style.width=(W*S+4)+'px';fr.style.height='600px';
+  const ifr=document.createElement('iframe');ifr.src='index.html#'+id;ifr.style.transform=`scale(${S})`;
+  ifr.onload=()=>{
+    const d=ifr.contentDocument;
+    const st=d.createElement('style');st.textContent='html,body{overflow:hidden!important}*{transition:none!important;animation:none!important}';d.head.appendChild(st);
+    setTimeout(()=>{
+      const h=d.documentElement.scrollHeight;
+      ifr.style.height=h+'px';fr.style.height=(h*S+4)+'px';
+      if(++done===pages.length) fit();
+    },600);
+  };
+  fr.appendChild(ifr);item.appendChild(fr);grid.appendChild(item);
+});
+function fit(){
+  const s=document.getElementById('sheet');
+  const w=Math.ceil(s.scrollWidth),h=Math.ceil(s.scrollHeight);
+  document.getElementById('pagesize').textContent=`@page{size:${w}px ${h}px;margin:0}html,body{width:${w}px;height:${h}px;overflow:hidden}`;
+  document.body.dataset.ready='1';
+}
+</script>
+</body>
+</html>

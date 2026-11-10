@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crealisatie Coöperatie – Website schets</title>
+<link rel="stylesheet" href="_ds/creaco-design-system/styles.css">
+<script src="image-slot.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#67AF71"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#67AF71"/><text x="600" y="470" text-anchor="middle" font-family="Impact,sans-serif" font-size="260" fill="#fff">CreaCo</text></svg></template>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#18171C;font-family:Arial,Arimo,sans-serif;font-size:17px;line-height:1.6}
+a{color:#3F804A;text-decoration:none}a:hover{color:#18171C}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.disp{font-family:Impact,sans-serif;font-weight:400;line-height:.9;letter-spacing:0;margin:0;text-wrap:balance}
+.sub{font-family:'Special Gothic Condensed One',sans-serif;font-weight:400;font-size:26px;line-height:1.05;margin:0}
+.lbl{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+p{margin:0 0 1em;text-wrap:pretty}
+.note{display:inline-block;background:#D9729A;color:#fff;font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px;margin:4px 0}
+.x{background:#D9729A;color:#fff;padding:0 6px;border-radius:999px;font-weight:700;font-size:.85em}
+.opt{opacity:.55}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:14px 26px;border-radius:999px;border:2px solid transparent;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .15s cubic-bezier(.2,.8,.2,1)}
+.btn-pink{background:#D9729A;color:#fff}.btn-pink:hover{background:#B85580;color:#fff}
+.btn-out{border-color:#18171C;color:#18171C}.btn-out:hover{background:#D6E8D8;color:#18171C}
+.btn-white{background:#fff;color:#18171C}.btn-white:hover{background:#18171C;color:#fff}
+/* header */
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:2px solid #18171C}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
+header img{height:56px;display:block}
+nav{display:flex;gap:28px;align-items:center}
+nav a{color:#18171C;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:6px 0;border-bottom:3px solid transparent}
+nav a:hover{color:#3F804A}nav a.on{border-color:#67AF71}
+.page{display:none}.page.on{display:block}
+/* hero */
+.hero{background:#67AF71;color:#fff;padding:96px 0 88px}
+.hero .disp{font-size:clamp(48px,9vw,140px);max-width:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:56px;align-items:end;margin-top:48px}
+.hero-grid p{font-size:20px;line-height:1.5}
+.hero .lbl{color:#fff;opacity:1}
+section.blk{padding:96px 0}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:64px}
+.h2{font-size:clamp(48px,6vw,84px);color:#67AF71}
+.rule{border-top:1px solid #67AF71;padding-top:14px;margin-bottom:40px;color:#67AF71}
+.lead{font-size:21px;line-height:1.5}
+/* propositie */
+.props{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid #18171C;margin-top:56px}
+.prop{padding:32px 28px 40px 0;border-bottom:1px solid #D6E8D8}
+.prop:not(:nth-child(3n)){border-right:1px solid #D6E8D8;margin-right:0}
+.prop:nth-child(3n+2),.prop:nth-child(3n){padding-left:28px}
+.prop .num{font-family:Impact,sans-serif;font-size:56px;line-height:1;color:#67AF71;display:block;margin-bottom:16px}
+.prop .sub{margin-bottom:10px}.prop p{color:#595959;font-size:16px;margin:0}
+/* radicaal normaal */
+.paper{background:#F4F1EA}
+.steps{list-style:none;margin:40px 0 0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:72px 1fr;align-items:baseline;border-top:1px solid #18171C;padding:14px 0;font-family:'Special Gothic Condensed One',sans-serif;font-size:32px;line-height:1.1}
+.steps li::before{content:counter(s);font-family:Impact,sans-serif;font-size:40px;color:#67AF71}
+.steps li.last{color:#D9729A;border-top:3px solid #D9729A}.steps li.last::before{content:"→";color:#D9729A}
+/* projecten cards */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:48px}
+.card{display:block;color:#18171C}
+.card .img{aspect-ratio:4/3;position:relative;background:#D6E8D8}
+.card .meta{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:2px solid #18171C;padding:16px 0}
+.card .sub{font-size:30px}.card .arrow{font-size:28px;color:#67AF71;transition:transform .15s}
+.card:hover .arrow{transform:translateX(6px)}.card:hover{color:#18171C}
+/* cta */
+.cta{background:#D9729A;color:#fff;padding:104px 0}
+.cta .disp{font-size:clamp(64px,10vw,140px);text-transform:uppercase}
+.cta-row{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-top:32px}
+.cta p{font-size:21px;max-width:36ch;margin:0}
+.cta-row img{height:110px}
+/* footer */
+footer{background:#18171C;color:#fff;padding:40px 0 24px;font-size:15px}
+footer .grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px}
+footer img{height:72px;width:auto;max-width:100%;display:block}footer a{color:#fff}footer a:hover{color:#67AF71}
+footer .lbl{color:#67AF71;display:block;margin-bottom:10px}
+footer .small{margin-top:28px;padding-top:16px;border-top:1px solid #3a3940;color:#9a99a0;font-size:13px}
+/* page header */
+.phead{padding:88px 0 56px;border-bottom:2px solid #18171C}
+.phead .disp{font-size:clamp(72px,11vw,160px);color:#67AF71}
+.crumb{display:flex;align-items:center;gap:10px;margin-bottom:28px;font-size:14px;color:#595959}
+.crumb::before{content:"";width:10px;height:10px;border-radius:50%;background:#67AF71}
+/* project detail */
+.proj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;padding:88px 0;border-bottom:1px solid #D6E8D8;align-items:start}
+.proj:nth-child(even) .pimg{order:2}
+.pimg{aspect-ratio:4/5;position:relative;position:sticky;top:120px}
+.proj .disp{font-size:clamp(44px,5vw,72px);color:#67AF71;margin:16px 0 28px}
+.facts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.facts span{border:2px solid #18171C;border-radius:999px;padding:4px 14px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.proj p{color:#3a3940}
+/* org */
+.flow{margin-top:56px;display:grid;gap:0}
+.flow-top{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.ent{border:2px solid #18171C;padding:22px 20px 24px;background:#fff}
+.ent .sub{font-size:24px;margin-bottom:8px}.ent p{font-size:15px;color:#595959;margin:0}
+.io{font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#F4F1EA;padding:2px 8px;border-radius:999px;vertical-align:middle;margin-left:4px}
+.conn{height:48px;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.conn span{border-right:2px dashed #18171C;width:50%}
+.conn.one{grid-template-columns:1fr}.conn.one span{width:50%}
+.ent.mid{background:#67AF71;border-color:#67AF71;color:#fff;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px;align-items:center;padding:32px}
+.ent.mid .sub{font-size:36px}.ent.mid p{color:#fff;font-size:16px}
+.ent.deep{background:#3F804A;border-color:#3F804A;color:#fff;padding:32px}
+.ent.deep p{color:#fff;font-size:16px}
+.mg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}
+.mg div{border:2px dashed #fff;padding:14px 16px;font-family:'Special Gothic Condensed One',sans-serif;font-size:22px}
+.team{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 28px;margin-top:48px}
+.person .ph{aspect-ratio:1;position:relative;margin-bottom:16px;background:#D6E8D8}
+.person .sub{font-size:26px}.person .role{color:#67AF71;margin:4px 0 10px;display:block}
+.person p{font-size:15px;color:#595959}
+.grp{margin-top:72px}
+@media (max-width:1100px){nav .btn{display:none}}
+@media (max-width:900px){.wrap{padding:0 22px}.hero-grid,.split,.proj,.ent.mid{grid-template-columns:1fr;gap:28px}.props{grid-template-columns:1fr}.prop{border-right:0!important;padding-left:0!important}.cards{grid-template-columns:1fr}.flow-top,.mg{grid-template-columns:1fr 1fr}.conn{display:none}.flow{gap:16px}.team{grid-template-columns:1fr 1fr}.proj:nth-child(even) .pimg{order:0}.pimg{position:relative;top:0}nav{gap:16px}nav .btn{display:none}footer .grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a href="#home" data-go="home"><img src="assets/logo-horizontal.png" alt="Crealisatie Coöperatie"></a>
+<nav><a href="#home" data-go="home">Home</a><a href="#projecten" data-go="projecten">Projecten</a><a href="#organisatie" data-go="organisatie">Organisatie</a><a class="btn btn-pink" href="#kennismaken" data-go="home" data-anchor="kennismaken">Maak met ons mee</a></nav>
+</div></header>
+
+<main>
+<!-- HOME -->
+<div class="page" id="p-home" data-screen-label="01 Home">
+<section class="hero"><div class="wrap">
+<div class="lbl" style="margin-bottom:28px">Crealisatie Coöperatie</div>
+<h1 class="disp"><span style="white-space:nowrap">Een <em>beweging</em></span><br><span style="white-space:nowrap">in ontwikkeling</span></h1>
+<div class="hero-grid">
+<div><p>De Crealisatie Coöperatie ontwikkelt creatieve maakgemeenschappen die werken als motor voor <strong>leefbaarheid, innovatie en lokale bedrijvigheid</strong>. Zo bestrijden we leegstand en leegloop en geven we kansrijke gebouwen en gebieden een duurzame culturele, economische en maatschappelijke impuls.</p>
+<p style="margin:0">Samen met de projecten die we initiëren en culturele, commerciële en maatschappelijke partners vormen we <strong>privaat-publieke samenwerkingen</strong>. Zo laten we zien dat publiek en privaat elkaar kunnen versterken en vaak <strong>meer opleveren dan de som der delen</strong>.</p></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end"><a class="btn btn-white" href="#projecten" data-go="projecten">Bekijk projecten →</a></div>
+</div>
+</div></section>
+
+
+<section class="blk"><div class="wrap">
+<div class="split" style="align-items:start;margin-top:0">
+<div>
+<h2 class="disp h2">Alles wat we doen leidt tot verbinding</h2>
+<p class="lead" style="margin-top:32px">Een maakgemeenschap is meer dan een gebouw vol ateliers. Waar wij beginnen, ontstaat een <strong>netwerk van wonen, werken en samenleven</strong> dat de hele omgeving raakt.</p>
+<p>Van gedeelde werkplaatsen en betaalde klussen voor deelnemers tot gemeenschapstuinen, kennisdeling en ruimte voor kunst en cultuur: wat in onze gemeenschappen groeit, komt ten goede aan <strong>buren, bezoekers en partners</strong>. Zo versterken we de leefbaarheid, de lokale economie en een gezonde, veilige leefomgeving.</p>
+</div>
+<img src="assets/alles-draait-om-samen.png" alt="Alles draait om samen: mobiliteit, veiligheid, zelfbeschikking, identiteit, werk, community, natuur, voeding, onderwijs, zingeving, wonen, energie &amp; afval, gezondheid" style="width:100%;max-width:620px;height:auto;display:block;margin:0 auto">
+</div>
+</div></section>
+
+<section class="blk" style="padding-top:0"><div class="wrap">
+<div class="rule lbl">Onze propositie</div>
+<div class="split" style="align-items:end">
+<h2 class="disp h2">Onze propositie</h2>
+<p class="lead" style="margin:0">Door de kennis en vaardigheden te benutten die al in de gemeenschap aanwezig zijn, realiseren we creatieve ruimte waar dat eerder niet kon – en doen we dat tegen een <strong>veel lagere kostprijs</strong>, wat direct ten goede komt aan de gemeenschap zelf.</p>
+</div>
+<div class="props">
+<div class="prop"><span class="num">1</span><h3 class="sub">Projectontwikkeling</h3><p>We herontwikkelen gebouwen en gebieden door te kijken naar wat de lokale community nodig heeft.</p></div>
+<div class="prop"><span class="num">2</span><h3 class="sub">Placemaking en conceptontwikkeling</h3><p>We brengen leven, innovatie en bedrijvigheid in kansrijke gebieden.</p></div>
+<div class="prop"><span class="num">3</span><h3 class="sub">Beheer en verhuur</h3><p>We beheren en verhuren projecten en houden de kosten overzichtelijk door zelfbestuur te organiseren.</p></div>
+<div class="prop"><span class="num">4</span><h3 class="sub">Community development</h3><p>We ontwikkelen maakcommunities door verbinding te maken met de gemeenschap om hen heen.</p></div>
+<div class="prop"><span class="num">5</span><h3 class="sub">Kennis en talentontwikkeling</h3><p>Samen met educatieve partners bieden we programma’s die helpen om de maakindustrie lokaal te maken en te behouden.</p></div>
+<div class="prop"><span class="num">6</span><h3 class="sub">Impact en maatschappelijk aandeelhouderschap</h3><p>We werken samen met het bedrijfsleven bij ontwikkelingen, om zo samen impact te creëren.</p></div>
+</div>
+</div></section>
+
+<section class="blk paper"><div class="wrap split">
+<div>
+<div class="rule lbl">Wat we doen</div>
+<h2 class="disp h2">Radicaal normaal</h2>
+<p class="lead" style="margin-top:32px">Wat we doen is radicaal normaal. We maken namelijk <strong>wat lokale communities nodig hebben</strong>. Om te snappen wat dat is, hebben we het ons eigen gemaakt om heel goed te luisteren.</p>
+<p class="opt" style="font-size:15px">Wanneer mensen de ruimte krijgen om samen te creëren, kunnen zij hun omgeving sociaal, economisch en cultureel versterken. We werken vanuit het principe van zelfbestuur en gedeeld eigendom, wat zorgt voor betrokkenheid en veerkracht binnen onze gemeenschappen. Onze community bestaat uit onze deelnemers, maar net zo goed uit buren, bezoekers, partners en leveranciers.</p>
+</div>
+<div>
+<div class="lbl" style="margin-top:6px">Ons proces is eenvoudig</div>
+<ol class="steps">
+<li>We verwerven een fysieke plek.</li>
+<li>We installeren pioniers.</li>
+<li>We verlagen drempels.</li>
+<li>We zorgen voor veiligheid.</li>
+<li>We verbinden.</li>
+<li>We geven eigenaarschap.</li>
+<li>We laten steeds meer los en dragen over.</li>
+<li class="last">En dan beginnen we weer opnieuw.</li>
+</ol>
+</div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+<div class="rule lbl">Projecten</div>
+<h2 class="disp h2">Projecten</h2>
+<div class="cards">
+<a class="card" href="#projecten" data-go="projecten" data-anchor="pr-hoop"><div class="img"><img src="assets/de-hoop.png" alt="Maakgemeenschap De Hoop" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="meta"><div><span class="lbl" style="color:#595959">Gerealiseerd · Zaandam</span><h3 class="sub">Maakgemeenschap De Hoop</h3></div><span class="arrow">→</span></div></a>
+<a class="card" href="#projecten" data-go="projecten" data-anchor="pr-distel"><div class="img"><img src="assets/distelweg-1.jpg" alt="Gebouw van De Verkeerstoren aan de Distelweg" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="meta"><div><span class="lbl" style="color:#595959">Gerealiseerd · Amsterdam</span><h3 class="sub">De Verkeerstoren</h3></div><span class="arrow">→</span></div></a>
+<!-- UIT: De Vrede (later terugzetten: verwijder style display:none) --><a class="card" style="display:none" href="#projecten" data-go="projecten" data-anchor="pr-vrede"><div class="img"><img src="assets/de-vrede.png" alt="De Vrede aan het Noordzeekanaal" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="meta"><div><span class="lbl" style="color:#595959">In voorbereiding · Zaandam</span><h3 class="sub">Maakgemeenschap De Vrede</h3></div><span class="arrow">→</span></div></a>
+<a class="card" href="#projecten" data-go="projecten" data-anchor="pr-herontw"><div class="img"><img src="assets/nieuwe-hoop.png" alt="Schets De Nieuwe Hoop" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="meta"><div><span class="lbl" style="color:#595959">In voorbereiding · Zaandam</span><h3 class="sub">De Nieuwe Hoop</h3></div><span class="arrow">→</span></div></a>
+<a class="card" href="#projecten" data-go="projecten" data-anchor="pr-futur"><div class="img"><img src="assets/futur35-1.png" alt="Interieur FUTUR35" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="meta"><div><span class="lbl" style="color:#595959">In voorbereiding · Amsterdam Noord</span><h3 class="sub">FUTUR35</h3></div><span class="arrow">→</span></div></a>
+</div>
+</div></section>
+</div>
+
+<!-- PROJECTEN -->
+<div class="page" id="p-projecten" data-screen-label="02 Projecten">
+<section class="phead"><div class="wrap">
+<div class="crumb">Crealisatie Coöperatie – Projecten</div>
+<h1 class="disp">Projecten</h1>
+</div></section>
+<div class="wrap">
+<article class="proj" id="pr-hoop"><div class="pimg"><img src="assets/de-hoop.png" alt="Maakgemeenschap De Hoop" style="width:100%;height:100%;object-fit:cover;display:block"></div><div>
+<span class="lbl" style="color:#595959">01 · Gerealiseerd · Zaandam</span><h2 class="disp">Maakgemeenschap De Hoop</h2>
+<div class="facts"><span>Sinds 2019</span><span>10.000 m²</span><span>170 ateliers</span><span>330+ makers</span></div>
+<p class="lead">Aan de industriële rafelrand van Zaanstad ontstond in 2019 MAAKgemeenschap De Hoop, een <strong>atelierdorp in een voormalige kartonfabriek</strong>.</p>
+<p>In het imposante gebouw van 10.000 m² huizen inmiddels 170 creatieve ateliers en werkplaatsen waar ruim 330 kunstenaars, makers en ambachtslieden actief zijn.</p>
+<p>Onder beheer van de Crealisatie Coöperatie groeide De Hoop uit tot een levendige broedplaats met een rijk aanbod aan gemeenschappelijke werkplaatsen en voorzieningen: een houtwerkplaats, metaalwerkplaats, keramiekwerkplaats, kookwerkplaats, grafische werkplaats met zeefdrukfaciliteit, een bar en podiumruimte, community-keuken en vergaderruimtes.</p>
+<p>De filosofie van Crealisatie krijgt hier tastbare vorm: een dynamisch netwerk van faciliteiten en initiatieven waar kunstenaars en ambachtslieden elkaar vinden, uitdagen en samen nieuwe mogelijkheden creëren.</p>
+<img src="assets/partners/de-hoop-logo-black.png" alt="Maakgemeenschap De Hoop" style="height:90px;margin-top:16px">
+</div></article>
+<article class="proj" id="pr-distel"><div class="pimg" style="display:grid;grid-template-rows:1fr 1fr;gap:8px;background:none"><img src="assets/distelweg-1.jpg" alt="Gebouw van De Verkeerstoren aan de Distelweg" style="width:100%;height:100%;object-fit:cover;display:block"><img src="assets/distelweg-2.jpg" alt="Terras van De Verkeerstoren" style="width:100%;height:100%;object-fit:cover;display:block"></div><div>
+<span class="lbl" style="color:#595959">02 · Gerealiseerd · Amsterdam, Distelweg</span><h2 class="disp">De Verkeerstoren</h2>
+<div class="facts"><span>Collectieve kunstwerkplaats</span><span>Community 45+</span></div>
+<p class="lead">De Verkeerstoren aan de Distelweg is een typische <strong>ruwe maakplaats</strong>, met nadruk op staal en houtbouw.</p>
+<p>Op het buitenterrein en in de werkplaatsen werken makers, bouwers en kunstenaars zij aan zij. Er is ruimte voor <strong>groot en zwaar werk</strong>: lassen, zagen en bouwen gebeurt hier gewoon buiten, zonder dat de buren erover vallen.</p>
+<p>Die ruwheid is precies <strong>de kracht van de plek</strong>. Juist hier ontstaan de decors, installaties en constructies die je elders in de stad terugziet, en blijft er in Noord ruimte voor maakwerk dat steeds moeilijker een plek vindt.</p>
+<p>Inmiddels is de groep <strong>zelfstandig verder gegaan onder de naam De Vliegtuin</strong>.</p>
+</div></article>
+<!-- UIT: De Vrede --><article class="proj" id="pr-vrede" style="display:none"><div class="pimg"><img src="assets/de-vrede.png" alt="De Vrede aan het Noordzeekanaal" style="width:100%;height:100%;object-fit:cover;object-position:55% center;display:block"></div><div>
+<span class="lbl" style="color:#595959">03 · In voorbereiding · Zaandam, Noordzeekanaal</span><h2 class="disp">Maakgemeenschap De Vrede</h2>
+<div class="facts"><span>Industrieel erfgoed</span><span>8.500 m²</span></div>
+<p class="lead">Op een steenworp afstand van De Hoop ligt haar iets oudere en knappere zusje: <strong>De Vrede</strong>. Een omvangrijk gebied aan het Noordzeekanaal met uitzicht op de NDSM-werf en Amsterdam CS, met daarop een pareltje van industrieel erfgoed.</p>
+<p>Als opmaat naar de toekomst van dit gebied, waar <strong>cultuur, werken, leren, verblijven en leisure</strong> samenkomen, brengen we nu al bedrijvigheid naar de Achtersluispolder, met een <strong>broedplaats van 8.500 m²</strong>. Zo ontsluiten we het gebied voor stadse bedrijvigheid en behouden we een plek voor de kleine maakindustrie, een belangrijke economische motor van Zaandam.</p>
+<p>Tegelijk leggen we de basis voor nieuwe ateliers en projectruimtes in latere fases.</p>
+</div></article>
+<article class="proj" id="pr-herontw"><div class="pimg" style="background:#DFE6DE"><img src="assets/nieuwe-hoop.png" alt="Schets De Nieuwe Hoop" style="width:100%;height:100%;object-fit:contain;display:block"></div><div>
+<span class="lbl" style="color:#595959">03 · In voorbereiding · Zaandam</span><h2 class="disp">De Nieuwe Hoop</h2>
+<div class="facts"><span>Met Synchroon &amp; Blink</span><span>10.000+ m²</span><span>56 woningen</span><span>54 ateliers</span></div>
+<p class="lead">Samen met eigenaar Synchroon en ontwikkelaar Blink werken we aan De Nieuwe Hoop: de herontwikkeling van De Hoop tot een plek waar <strong>gewoond én gewerkt</strong> wordt.</p>
+<p>In samenspraak met de gemeente Zaanstad ontstond een eerste visie. Daarin wordt De Hoop <strong>het culturele hart van het Sluiskwartier</strong>, een gebied dat de komende jaren uitgroeit tot nieuwe woonwijk.</p>
+<p>De eerste schets telt ruim 10.000 m², met <strong>56 betaalbare woningen, 54 ateliers</strong> en een ontmoetingsprogramma dat samen met de buurt vorm krijgt.</p>
+</div></article>
+<article class="proj" id="pr-futur"><div class="pimg" style="display:grid;grid-template-rows:1fr 1fr;gap:8px;background:none"><img src="assets/futur35-1.png" alt="Interieur FUTUR35" style="width:100%;height:100%;object-fit:cover;display:block"><img src="assets/futur35-2.png" alt="Ontwerp FUTUR35 in Amsterdam Noord" style="width:100%;height:100%;object-fit:cover;display:block"></div><div>
+<span class="lbl" style="color:#595959">04 · In voorbereiding · Amsterdam Noord</span><h2 class="disp">FUTUR35</h2>
+<div class="facts"><span>Buurthuis / jongerencentrum</span><span>Community 50+</span></div>
+<p class="lead">Met lokale jongeren uit Amsterdam-Noord werken we aan Maakkamer Noord (FUTUR35): een werkplaats waar <strong>zinvolle dagbesteding en lokale economie</strong> samenkomen.</p>
+<p>Het project ontstaat <strong>vanuit de community zelf</strong>. Jongeren zonder passende opleiding, werk of vaste dagstructuur leren er in de praktijk, samen met makers, ondernemers en vakmensen uit de buurt.</p>
+<p>Ze werken aan <strong>echte opdrachten voor echte klanten</strong>, en bouwen zo aan vakmanschap, een netwerk en een opstap naar opleiding, stage of betaald werk. Zo blijft <strong>talent uit Noord ook in Noord</strong>.</p>
+</div></article>
+</div>
+</div>
+
+<!-- ORGANISATIE -->
+<div class="page" id="p-organisatie" data-screen-label="03 Organisatie">
+<section class="phead"><div class="wrap">
+<div class="crumb">Crealisatie Coöperatie – Organisatie</div>
+<div style="max-width:760px">
+<p class="lead" style="margin:0">De Crealisatie Coöperatie is een combinatie van organisaties. Doordat elke organisatie haar eigen functie, missie en aansturing heeft, blijven we als beweging <strong>wendbaar</strong> en kunnen we inspelen op de behoefte van onze communities.</p>
+</div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+<div class="rule lbl">Zo zijn we georganiseerd</div>
+<div class="flow">
+<div class="flow-top">
+<div class="ent"><h3 class="sub">Stichting Facilitaire Zaken</h3><p>Regelt het eigendom, de verhuur en distributie van onder meer mobiliteit, machines en roerende kapitale investeringen.</p></div>
+<div class="ent"><h3 class="sub">CreaCo B.V.</h3><p>Ontwikkelt gebouwen en gebieden in opdracht van de Crealisatiestichtingen.</p></div>
+<div class="ent"><h3 class="sub">Job shop <span class="io">i.o.</span></h3><p>Regelt en vertoont het werk dat wordt gedaan in de stichtingen en trekt projecten van derden aan.</p></div>
+<div class="ent"><h3 class="sub">Sociaal Maatschappelijk Bouwfonds <span class="io">i.o.</span></h3><p>Regelt revolverende financiering van projecten met een sociaal-maatschappelijk doel, zowel ‘eigen’ als van partnerorganisaties.</p></div>
+</div>
+<div class="conn"><span></span><span></span><span></span><span></span></div>
+<div class="ent mid"><h3 class="sub">Stichtingen Crealisatie<br>NL / ES / PL</h3><p style="margin:0">Regelen per land het initiëren en overdragen van projecten en het ontwikkelen van diensten en processen. De besturen adviseren en houden governance op de afzonderlijke maakgemeenschappen.</p></div>
+<div class="conn one"><span></span></div>
+<div class="ent deep"><h3 class="sub" style="font-size:36px">Maakgemeenschappen</h3><p style="margin:10px 0 0;max-width:70ch">In elke maakgemeenschap is het eigendom en beheer van gebouwen en gebied geregeld in een stichting met een eigen bestuur. Op termijn worden gebouwen en gebieden <strong>coöperatief eigendom van de deelnemers</strong>.</p>
+<div class="mg"><div>De Hoop</div><div>De Verkeerstoren</div><div style="display:none">De Vrede</div><div>FUTUR35</div></div></div>
+</div>
+</div></section>
+
+<section class="blk paper"><div class="wrap">
+<div class="rule lbl">Team</div>
+<div class="split" style="align-items:end"><h2 class="disp h2">Team</h2><div><span class="note">Allemaal een ‘enthousiast zinnetje’?</span> <span class="note">Alle teksten checken bij de betreffende personen</span></div></div>
+<div class="team">
+<div class="person"><div class="ph"><img src="assets/team-cyril.png" alt="Cyril Stom" style="width:100%;height:100%;object-fit:cover;display:block"></div><h3 class="sub">Cyril Stom</h3><span class="lbl role">Community manager De Hoop</span><p>Heeft een achtergrond in de marketingcommunicatie en was creatief producent van talloze culturele producties. Als community manager van De Hoop staat hij bekend als een echte spin-in-het-web. Door zijn niet-aflatende initiatief worden steeds weer nieuwe diensten, gebouwen en gebieden aan het aanbod van de CC toegevoegd.</p></div>
+<div class="person"><div class="ph"><img src="assets/team-jacek.png" alt="Jacek Rajewski" style="width:100%;height:100%;object-fit:cover;display:block"></div><h3 class="sub">Jacek Rajewski</h3><span class="lbl role">Financiën &amp; Europees netwerk</span><p>Richtte in het verleden onder andere de Amsterdamse nachtclub Sugarfactory op. Als consultant en fondsenwerver is Jacek een bekende naam in het culturele circuit. Door zijn grote Europese netwerk is hij de drijvende kracht achter de ontwikkeling van de Crealisatie tot overkoepelende speler voor maakgemeenschappen. Hij is dagelijks verantwoordelijk voor het financiële reilen en zeilen.</p></div>
+<div class="person"><div class="ph"><img src="assets/team-joris.png" alt="Joris Hofmans" style="width:100%;height:100%;object-fit:cover;display:block"></div><h3 class="sub">Joris Hofmans</h3><span class="lbl role">Strategie &amp; partnerships</span><p>Is creatief strategieconsultant en projectregisseur op het snijvlak van cultuur en commercie. Hij helpt teams complexe plannen te vertalen naar concrete strategieën en concepten. Binnen de Crealisatie is hij verantwoordelijk voor commerciële strategie, conceptontwikkeling en partnerships.</p></div>
+</div>
+<div class="grp"><div class="rule lbl">Toezicht &amp; advies</div>
+<div class="team" style="margin-top:0">
+<div class="person"><div class="ph"><img src="assets/rvt-erik.png" alt="Erik Duivenvoorden" style="width:100%;height:100%;object-fit:cover;display:block"></div><h3 class="sub">Erik Duivenvoorden</h3><span class="lbl role">Toezichthouder</span><p>Is socioloog, filosoof en publicist, gespecialiseerd in naoorlogse protestbewegingen en undergroundcultuur. Hij richtte onder andere Het Staatsarchief op en schreef standaardwerken over de kraakbeweging, het kroningsoproer van 1980, Provo, Robert Jasper Grootveld en rebelse jeugdsubculturen. Hij houdt zicht op de maatschappelijke missie en aanpak.</p></div>
+<div class="person"><div class="ph"><img src="assets/rvt-maarten.png" alt="Maarten Meurkens" style="width:100%;height:100%;object-fit:cover;display:block"></div><h3 class="sub">Maarten Meurkens</h3><span class="lbl role">Toezichthouder</span><p>Is vastgoedondernemer, conceptontwikkelaar en mede-oprichter van Meurkens&amp;Meurkens, gespecialiseerd in tijdelijk en maatschappelijk vastgoedbeheer en broedplaatsontwikkeling in de regio Amsterdam. Hij houdt zicht op de nieuwe proposities, contracten en afspraken van de maakgemeenschappen en hun bestuur.</p></div>
+<div class="person"><div class="ph"><img src="assets/rvt-rob.png" alt="Rob van der Leij" style="width:100%;height:100%;object-fit:cover;display:block"></div><h3 class="sub">Rob van der Leij</h3><span class="lbl role">Toezichthouder</span><p>Is directeur van Van der Leij Bouwbedrijven, gericht op onderhoud, renovatie, nieuwbouw en verduurzaming van vastgoed. Hij staat bekend als innovatief bouwer, met aandacht voor kwaliteitsborging en energiezuinige bouwconcepten. Hij houdt zicht op de bouwplannen en ontwikkelingen.</p></div>
+<div class="person"><div class="ph"><img src="assets/rvt-micha.png" alt="Micha Wijngaarde" style="width:100%;height:100%;object-fit:cover;display:block"></div><h3 class="sub">Micha Wijngaarde</h3><span class="lbl role">Adviseur</span><p>Is strategisch adviseur in stedelijke gebieds- en vastgoedontwikkeling en oprichter van Urban Scouts, dat culturele instellingen, creatieve partijen en vastgoedpartners helpt betekenisvolle, rendabele en maatschappelijk impactvolle stadsprojecten te realiseren. Hij is adviseur en mogelijkmaker van nieuwe vastgoedprojecten.</p></div>
+</div></div>
+</div></section>
+</div>
+</main>
+
+<section class="cta" id="kennismaken"><div class="wrap">
+<div class="lbl" style="margin-bottom:24px">Doe je mee?</div>
+<h2 class="disp">Maak met ons mee!</h2>
+<div class="cta-row">
+<p>Wat we ook doen, we doen het altijd samen met <strong>culturele, maatschappelijke én commerciële partners</strong>. Maak daarom met ons mee.</p>
+<a class="btn btn-white" href="mailto:cyril@crealisatiecooperatie.org">Plan een kennismaking →</a>
+</div>
+</div></section>
+
+<footer><div class="wrap">
+<div class="grid">
+<div><img src="assets/logo-horizontal-reversed.png" alt="Crealisatie Coöperatie"></div>
+<div><span class="lbl">Bezoek</span>Crealisatie Coöperatie<br>Barndegat 6-8<br>1505 HN Zaandam</div>
+</div>
+<div class="small">© 2026 Crealisatie Coöperatie · Algemene voorwaarden</div>
+</div></footer>
+
+<script>
+const pages=['home','projecten','organisatie'];
+function go(p,anchor){if(!pages.includes(p))p='home';pages.forEach(x=>document.getElementById('p-'+x).classList.toggle('on',x===p));document.querySelectorAll('nav a[data-go]:not(.btn)').forEach(a=>a.classList.toggle('on',a.dataset.go===p));const t=anchor&&document.getElementById(anchor);window.scrollTo({top:t?t.getBoundingClientRect().top+window.scrollY-90:0})}
+document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(!a)return;e.preventDefault();history.replaceState(null,'','#'+a.dataset.go);go(a.dataset.go,a.dataset.anchor)});
+go(location.hash.slice(1));
+</script>
+</body>
+</html>
