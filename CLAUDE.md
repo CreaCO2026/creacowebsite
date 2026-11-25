@@ -4,10 +4,9 @@ Dit is de website van de Crealisatie Coöperatie (CreaCo). Statische HTML zonder
 
 ## Workflow
 
-- Elke wijziging gaat via een eigen branch en een pull request naar `main`. Nooit direct naar `main` pushen.
-- Laat vóór het openen van de pull request een screenshot zien van het aangepaste deel van de pagina.
-- Houd een pull request klein en beschrijf in gewone taal wat er op de site verandert.
-- Joris (of een collega) controleert en merget zelf op GitHub.
+- Wijzigingen gaan direct naar `main`, zonder pull request. Alles op `main` staat binnen enkele minuten live.
+- Laat vóór het pushen een screenshot zien van het aangepaste deel van de pagina en push pas na akkoord.
+- Houd elke commit klein en beschrijf in gewone taal wat er op de site verandert.
 
 ## Bestanden
 
